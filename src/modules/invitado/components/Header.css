@@ -1,0 +1,98 @@
+header{
+    height: 10%;
+    background-color: #201C29;
+    display: flex;
+    justify-content: center;
+    z-index: 10000;
+}
+.header-container{
+    /* width: 100%; */
+    display: flex;
+}
+
+.img{
+    margin:25px 0px 25px 25px ;
+}
+
+div img{
+    width: 80px;
+
+}
+
+nav{
+    margin: 2em 0 0 1em;
+    flex: 9;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    color: #f1f1f1;
+    text-decoration: none;
+    margin-right: 1.6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+nav ul li a:hover{
+    color: #AAD9E7;
+    text-decoration: none;
+}
+
+nav ul li a i{
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.buscador{
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+
+}
+
+.formulario-buscar{
+    display: flex;
+}
+
+.formulario-buscar button{
+    background: linear-gradient(to right, #115ff1, #19b7f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-left: 0;
+    border-bottom: 1px solid #eee;
+    /* padding: 5px; */
+    color: #ddd;
+    outline: none;
+}
+
+.formulario-buscar input{
+    background-color: #201C29;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-right: 0;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    color: #ddd;
+    outline: none;
+    font-size: 1.1em;
+    padding: 0px 1em;
+}

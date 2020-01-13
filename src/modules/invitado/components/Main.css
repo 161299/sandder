@@ -1,0 +1,177 @@
+/* contenedores maestros */
+
+.container_main{
+    display: flex;
+    justify-content: center;
+    /* position: fixed; */
+    flex-wrap: wrap;
+}
+
+.container_calzado{
+    /* margin-top: 13em; */
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -50px;
+    flex-wrap: wrap;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.container_calzado:hover{
+    opacity: 1;
+    transition: 0.5s;
+    top: 50px;
+    background-color: #fff;
+}
+
+.text-center {
+    padding: 5em;
+    align-items: center;
+    background-color: black;
+    color: #fff;
+    animation: moveToLeft 2s;
+}
+
+
+
+/* fin de contenedores maestros */
+
+.image_main{
+    background-image: url('./../images/zapatos-main.jpg');
+    height: 90vh;
+    width: 90em;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* box-shadow: #000 0px 0px 30px; */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.banner h1{
+    font-size: 80px;
+    color: yellow;
+    font-weight: 300;
+    margin-bottom: 30px;
+    animation: moveToLeft 2s;
+}
+
+.banner span{
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #000;
+}
+
+.banner p{
+    font-size: 50px;
+    font-weight: 300;
+    color: #000;
+    margin-bottom: 20px;
+    animation: moveToRight 2s;
+}
+
+.banner p span{
+    color: yellow;
+}
+
+.banner button{
+    width: 180px;
+    padding: 12px;
+    margin: 20px;
+    border: 2px solid #eee;
+    border-radius: 50px;
+    font-size: 18px;
+    outline: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.btn-left{
+    background-color: #eee;
+    color: #444;
+    animation-name: animateBtn;
+    animation-duration: 1s;
+    animation-delay: 1.5s;
+    animation-fill-mode: backwards;
+}
+
+.btn-left:hover{
+    background-color: transparent;
+    color: yellow;
+}
+
+.btn-right{
+    background-color: transparent;
+    color: #eee;
+    animation-name: animateBtn;
+    animation-duration: 1s;
+    animation-delay: 2.3s;
+    animation-fill-mode: backwards;
+}
+
+.btn-right a{
+    color: #fff;
+    text-decoration-line: none;
+}
+
+.btn-right:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+@keyframes moveToLeft{
+    0% {
+        transform: translateX(120px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveToRight{
+    0% {
+        transform: translateX(-120px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes animateBtn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/*  texto centrado */
+
+
+
+
+.container_calzado_main{
+    padding: 0;
+    margin-left: 2.3em;
+    width: 75em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.calzados img{
+    width: 30em;
+    margin: 3em;
+    /* position: relative; */
+    /* transform: scale(-200px 10px); */
+}
+
