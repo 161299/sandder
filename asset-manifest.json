@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.93c22231.chunk.css",
+    "main.js": "/static/js/main.b8f851ac.chunk.js",
+    "main.js.map": "/static/js/main.b8f851ac.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e20206d0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e20206d0.js.map",
+    "static/js/2.1bc60f51.chunk.js": "/static/js/2.1bc60f51.chunk.js",
+    "static/js/2.1bc60f51.chunk.js.map": "/static/js/2.1bc60f51.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.17819678c31b1d052c6186ca7abeea1e.js": "/precache-manifest.17819678c31b1d052c6186ca7abeea1e.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.93c22231.chunk.css.map": "/static/css/main.93c22231.chunk.css.map",
+    "static/js/2.1bc60f51.chunk.js.LICENSE": "/static/js/2.1bc60f51.chunk.js.LICENSE",
+    "static/media/01-calzado.jpg": "/static/media/01-calzado.e439b26b.jpg",
+    "static/media/02-calzado-zeus.jpg": "/static/media/02-calzado-zeus.38031f0f.jpg",
+    "static/media/Main.css": "/static/media/zapatos-main.95c9a21f.jpg",
+    "static/media/logo.png": "/static/media/logo.2e96fcbd.png",
+    "static/media/rex.jpg": "/static/media/rex.e8f01e43.jpg",
+    "static/media/thor.jpg": "/static/media/thor.88359344.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e20206d0.js",
+    "static/js/2.1bc60f51.chunk.js",
+    "static/css/main.93c22231.chunk.css",
+    "static/js/main.b8f851ac.chunk.js"
+  ]
+}
