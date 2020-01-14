@@ -1,0 +1,22 @@
+.formulario{
+     margin-bottom: 5em;  
+     color: #fff;
+     position: relative;   
+     top: -35em;
+     right: -20em;
+     z-index: 1; 
+     background-color: rgba(0, 0, 0, 0.5); 
+     padding: 3em;
+     border-radius: 20px;        
+}
+
+.container-img{
+   display: flex;
+   justify-content: center;                 
+}
+
+.container-img img{
+    width: 90em;    
+    height: 100vh; 
+    /* position: fixed;            */
+}

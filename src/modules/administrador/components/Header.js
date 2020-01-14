@@ -1,34 +1,42 @@
-import React from 'react'
+import { NavLink } from "react-router-dom";
+import './Header.css'
+import logo from '../images/logo.png'
 
-export default function Header() {
-    return (
-        <header>
-            <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-                    aria-expanded="false" aria-label="Toggle navigation"></button>
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                <a class="dropdown-item" href="#">Action 1</a>
-                                <a class="dropdown-item" href="#">Action 2</a>
-                            </div>
-                        </li>
+import React, { Component , Fragment} from 'react'
+
+export default class Header extends Component {
+    constructor(props) {
+        super(props);
+        
+    }
+    cerrarSesion = () =>{this.props.logout();}
+    
+    render() {
+        return (
+            <header>
+            <div className="header-container">
+                <div className="img"><NavLink className="display"  to="/"> <img  src={logo} /></NavLink></div>
+                <nav className="nav">
+                    <ul>
+                        {/* <li><NavLink to={'/'} ><label><i class="fas fa-home"></i> Perfil</label></NavLink></li>
+                        <li><NavLink to={'/nosotros'} ><label><i class="fas fa-street-view"></i> Administrador</label></NavLink></li> */}
+                        <li><NavLink to={'/admin'} ><label><i class="fas fa-chalkboard-teacher"></i> Administrador</label> </NavLink></li>
+                        <li><NavLink to={'/admin/perfil'} ><label><i class="fas fa-shoe-prints"></i> Perfil</label></NavLink></li>
+                        <li><NavLink to={'/admin/proyectos'} ><label><i class="fas fa-shoe-prints"></i> Proyectos</label></NavLink></li>
+                        <li><NavLink to={'/admin/libreria'} ><label><i class="fas fa-shoe-prints"></i> Libreria</label></NavLink></li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" />
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </nav>
+                <div className="buscador">
+                    <form className="formulario-buscar">
+                        {/* <input type="text" placeholder="Busca Aquí" /> */}
+                            <button   onClick={this.cerrarSesion} >
+                                Cerrar Sesión
+                            </button>
                     </form>
                 </div>
-            </nav>
+            </div>
         </header>
-    )
+        )
+    }
 }
+
