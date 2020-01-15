@@ -5,13 +5,14 @@ import Perfil from './pages/Perfil'
 import Header from './components/Header'
 import Proyectos from './pages/Proyectos';
 import OptimizedClass from './pages/OptimizedClass';
+import ProductoCreated from './pages/ProductoCreated';
+import ProyectoVer from './pages/ProyectoVer';
 
 
 export default class Administrador extends Component {
 
     constructor(props) {
-        super(props);
-        
+        super(props);   
     }
     
 
@@ -22,7 +23,9 @@ export default class Administrador extends Component {
                 <Switch>
                     <Route path="/admin/perfil" render={()=>(<Perfil />)} />
                     <Route path="/admin/proyectos" render={()=>(<Proyectos />)} />
+                    <Route path="/admin/ver-proyecto/:pro_id" render={()=>(<ProyectoVer />)} />
                     <Route path="/admin/libreria" render={()=>(<OptimizedClass />)} />
+                    <Route path="/admin/producto-created" render={()=>(<ProductoCreated />)} />
                     <Route path="/" render={()=>(<Dashboard />)} />
                 </Switch>
             </Fragment>
