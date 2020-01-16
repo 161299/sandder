@@ -38,15 +38,6 @@ class Proyectos extends Component {
 
   goVerProyecto= (pro_id)=>{
     this.props.history.push(`/admin/ver-proyecto/${pro_id}`)
-    // ProyectoService.getProyectoById(this.props)
-    // .then((rpta)=>{
-    //   console.log(rpta);
-      
-    // })
-    // .catch((error)=>{
-    //   console.log(error);
-      
-    // })
   }
 
   getProyectos() {
@@ -79,6 +70,9 @@ class Proyectos extends Component {
                     className="btn btn-danger"
                     onClick={e => {
                       this.eliminarProyecto(proyecto.pro_id);
+                    }}
+                    style={{
+                      marginRight: '10px'
                     }}
                   >
                     <i class="fas fa-trash-alt"></i>
@@ -139,7 +133,7 @@ class Proyectos extends Component {
             position: 'fixed',
             bottom: '20px',
             right: '20px',
-            borderRadius: '50%'
+            borderRadius: '50%',
         }} onClick={this.goCrearProyecto} >
             <i class="fas fa-plus"></i>    
         </button>  
@@ -162,6 +156,9 @@ class Proyectos extends Component {
                   title="Arnold Movies"
                   columns={this.state.data.columns}
                   data={this.state.data.rows}
+                  style={{
+                    margin: '5rem 0px',
+                  }}
                 />
               )}
             </div>

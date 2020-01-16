@@ -1,1 +1,1 @@
-export let url_backend = 'http://127.0.0.1:3000'
+export let url_backend = 'http://localhost:3000'

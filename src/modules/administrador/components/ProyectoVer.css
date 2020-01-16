@@ -1,0 +1,28 @@
+.main{
+    display: flex;
+    justify-content: center;
+    background-color: #eee;
+}
+
+.cards{
+    margin: 5rem;
+    /* padding: 2em; */
+    width: 25rem;
+    height: 25rem;
+    border-radius: 20px;
+    box-shadow: #000 1px 3px 5px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.cards-title{
+    background-color: #000;
+    color: #fff;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.cards p{
+    margin: 15px 0px 20px 0px;
+    font-size: 1.5em;
+}
