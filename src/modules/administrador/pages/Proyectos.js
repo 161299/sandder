@@ -120,7 +120,7 @@ class Proyectos extends Component {
   }
 
   render() {
-    console.log(this.state.proyectos.pro_id)
+    // console.log(this.state.proyectos.pro_id)
     let carga;
     if (this.state.cargando) {
       carga = <Cargando texto={"Cargando los proyectos"} />;
@@ -149,7 +149,7 @@ class Proyectos extends Component {
                                     />                
                   }                 */}
 
-              {carga ? (
+              {/* {carga ? (
                 carga
               ) : (
                 <DataTable
@@ -160,7 +160,73 @@ class Proyectos extends Component {
                     margin: '5rem 0px',
                   }}
                 />
-              )}
+              )} */}
+              <table className="table table-sm  table-hover " >
+                <thead>
+                  <tr>
+                    <th>
+                      <i className="fa fa-hashtag" aria-hidden="true"></i>
+                      <span>Id</span>
+                    </th>
+                    <th>
+                      <i className="fa fa-folder" aria-hidden="true"></i>
+                      <span>Nombre</span>
+                    </th>
+                    <th>
+                      <i className="fa fa-money" aria-hidden="true"></i>
+                      <span>Presupuesto</span>
+                    </th>
+                    <th>
+                      <i className="fa fa-calendar" aria-hidden="true"></i>
+                      <span>Fecha de Inicio</span>
+                    </th>
+                    <th>
+                      <i className="fa fa-calendar" aria-hidden="true"></i>
+                      <span>Fecha de Fin</span>
+                    </th>
+                    <th>
+                      <i className="fa fa-toggle-on" aria-hidden="true"></i>
+                      <span>Estado</span>
+                    </th>
+                    <th>
+                      <i className="fa fa-cog" aria-hidden="true"></i>
+                      <span>Estado</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {
+                    this.state.proyectos.map(p=>{
+                      return (
+                        <tr>
+                          <td>{p.pro_id}</td>
+                          <td>{p.pro_nom}</td>
+                          <td>{p.pro_pres}</td>
+                          <td>{p.pro_fechin}</td>
+                          <td>{p.pro_fechfin}</td>
+                          <td>{p.pro_est === '1' ? (
+                            <span className="badge badge-success">Activo</span>
+                          ) : (
+                            <span className="badge badge-danger">Desactivo</span>
+                          ) }</td>
+                          <td>
+                            <button className="btn btn-danger mr-2"  onClick={()=>{
+                              this.eliminarProyecto(p.pro_id)
+                            }} >
+                              <i className="fa fa-trash" aria-hidden="true"></i>
+                            </button  >
+                            <button className="btn btn-dark"  onClick={()=>{
+                              this.goVerProyecto(p.pro_id)
+                            }}>
+                              <i className="fa fa-eye" aria-hidden="true"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      )
+                    })
+                  }
+                </tbody>
+              </table>
             </div>
           </div>
         </main>

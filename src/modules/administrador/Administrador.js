@@ -7,6 +7,7 @@ import Proyectos from './pages/Proyectos';
 import OptimizedClass from './pages/OptimizedClass';
 import ProductoCreated from './pages/ProductoCreated';
 import ProyectoVer from './pages/ProyectoVer';
+import PresupuestoCrear from './pages/presupuesto/PresupuestoCrear';
 
 
 export default class Administrador extends Component {
@@ -26,6 +27,7 @@ export default class Administrador extends Component {
                     <Route path="/admin/ver-proyecto/:pro_id" render={()=>(<ProyectoVer />)} />
                     <Route path="/admin/libreria" render={()=>(<OptimizedClass />)} />
                     <Route path="/admin/producto-created" render={()=>(<ProductoCreated />)} />
+                    <Route path="/admin/presupuesto-created/:pro_id" render={()=>(<PresupuestoCrear />)} />
                     <Route path="/" render={()=>(<Dashboard />)} />
                 </Switch>
             </Fragment>
