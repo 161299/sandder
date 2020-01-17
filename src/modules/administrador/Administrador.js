@@ -8,6 +8,7 @@ import OptimizedClass from './pages/OptimizedClass';
 import ProductoCreated from './pages/ProductoCreated';
 import ProyectoVer from './pages/ProyectoVer';
 import PresupuestoCrear from './pages/presupuesto/PresupuestoCrear';
+import Transaccion from './pages/gasto-ingreso/Transaccion';
 
 
 export default class Administrador extends Component {
@@ -28,6 +29,7 @@ export default class Administrador extends Component {
                     <Route path="/admin/libreria" render={()=>(<OptimizedClass />)} />
                     <Route path="/admin/producto-created" render={()=>(<ProductoCreated />)} />
                     <Route path="/admin/presupuesto-created/:pro_id" render={()=>(<PresupuestoCrear />)} />
+                    <Route path="/admin/trasaction/gasto-ingreso/:pro_id" render={()=>(<Transaccion />)} />
                     <Route path="/" render={()=>(<Dashboard />)} />
                 </Switch>
             </Fragment>

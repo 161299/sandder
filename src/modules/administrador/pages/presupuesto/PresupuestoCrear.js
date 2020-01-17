@@ -3,6 +3,9 @@ import Select from 'react-select'
 import {withRouter} from 'react-router-dom';
 import {RecursoService} from './../../../../services/RecursoService'
 import { UnidadMedidaService } from "../../../../services/UnidadMedidaService";
+import { PresupuestoProyectoService } from "../../../../services/PresupuestoProyectoService";
+import Swal from 'sweetalert2'
+
 
 class PresupuestoCrear extends Component {
   
@@ -52,6 +55,7 @@ class PresupuestoCrear extends Component {
   componentDidMount(){
         this.traerAPIS()
 //         this.setFormulario(e)
+        console.log(this.props)  
         
   }
 
@@ -79,11 +83,27 @@ class PresupuestoCrear extends Component {
        
        this.setState({
            presupuestos: [...this.state.presupuestos, objPresupuesto]                
+       })  
+   }
+
+   createPresupuesto = () => {
+       PresupuestoProyectoService.postPresupuestoProyecto(this.state.presupuestos)
+       .then((rpta)=>{
+           if(rpta.ok){
+               Swal.fire({
+                    title: 'Creación Exitosa !',
+                    texto: 'Los presupuestos han sido registrados',
+                    icon: 'success'
+               }).then((rpta)=>{
+                    if(rpta.value){
+                       this.props.history.push(`/admin/ver-proyecto/${this.props.match.params.pro_id}`)  
+                    }
+               })              
+           } 
        })
-
-
-       
-       
+       .catch((error)=>{
+            console.log(error);
+       }) 
    }
   
   
@@ -150,18 +170,17 @@ class PresupuestoCrear extends Component {
                                  <label htmlFor="pp_um">Unidad de Medida</label>                   
                                    <Select 
                                         options={this.state.unidadesmedidas} 
-                                        onChange={(e)=>{
-                                        //       this.state.formulario.um_id              
+                                        onChange={(e)=>{              
                                              this.setState({
                                                  formulario: {
                                                      ...this.state.formulario,
                                                      um_id: e.um_id,
-                                                     unidadesmedidas: e.um_nom,
-                                                     recursos: e.rec_nom                
+                                                     unidadesmedidas: e.um_nom,                
                                                  }                
                                              })               
                                         }}
-                                        value={this.state.formulario.um_id}/>   
+                                        // value={this.state.formulario.um_id}
+                                        />   
                                </div>          
                          </div>
                          <div className="col-md-2">
@@ -173,11 +192,12 @@ class PresupuestoCrear extends Component {
                                              this.setState({
                                                  formulario: {
                                                      ...this.state.formulario,
-                                                     rec_id: e.rec_id                
+                                                     rec_id: e.rec_id,
+                                                     recursos: e.rec_nom                
                                                  }                
                                              })               
                                         }}
-                                        value={this.state.formulario.rec_id}/>
+                                        />
                                </div>    
                          </div>
                          <div className="col-md-2">
@@ -201,7 +221,7 @@ class PresupuestoCrear extends Component {
              <div className="col-md-12">
                   <div className="card shadow">
                     <div className="card-body">
-                       <table className="table table-bordered ">
+                       <table className="table table-bordered table-sm ">
                           <thead className="thead thead-dark" >
                                <tr className="text-center">
                                    <th>Cantidad</th>
@@ -216,8 +236,8 @@ class PresupuestoCrear extends Component {
                                {
                                    this.state.presupuestos.map(pre => {
                                         return (
-                                             <tr>
-                                   <td>{pre.pp_cant}</td>
+                                             <tr key={`${pre.um_id}${pre.rec_id}`} >
+                                                 <td>{pre.pp_cant}</td>
                                                  <td>{pre.pp_uni}</td>
                                                  <td>{pre.pp_tot}</td>
                                                  <td>{pre.unidadesmedidas}</td>
@@ -228,7 +248,11 @@ class PresupuestoCrear extends Component {
                                }
                           </tbody>
 
-                       </table>                    
+                       </table>  
+                       <button className="btn btn-dark btn-block"  onClick={this.createPresupuesto} >
+                           <i class="fas fa-save    "></i>
+                           Crear Presupuesto     
+                       </button>                  
                     </div>                    
                   </div>               
              </div>                           

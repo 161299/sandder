@@ -161,8 +161,8 @@ class Proyectos extends Component {
                   }}
                 />
               )} */}
-              <table className="table table-sm  table-hover " >
-                <thead>
+              <table className="table table-sm  table-hover mt-4 " >
+                <thead className="thead-dark"  >
                   <tr>
                     <th>
                       <i className="fa fa-hashtag" aria-hidden="true"></i>
@@ -190,7 +190,7 @@ class Proyectos extends Component {
                     </th>
                     <th>
                       <i className="fa fa-cog" aria-hidden="true"></i>
-                      <span>Estado</span>
+                      <span>Acciones</span>
                     </th>
                   </tr>
                 </thead>
