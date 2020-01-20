@@ -1,7 +1,7 @@
 import {url_backend} from './../environmet/environment' 
 import { AuthService } from './Auth';
 
-export class  PresupuestoProyectoService{
+export class  GastoIngresoService{
     
        static async postTransaccion(data){
          let _sAuth = new AuthService();
@@ -18,6 +18,5 @@ export class  PresupuestoProyectoService{
         let response = await fetch(`${url_backend}/transaccion/gasto-ingreso`, config);
         let rpta = response.json()
         return rpta
-
        }
     }

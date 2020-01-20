@@ -60,7 +60,6 @@ class PresupuestoCrear extends Component {
   }
 
   setFormulario= (e) =>{
-           
            this.setState({
               formulario : {
                     ...this.state.formulario, 
@@ -73,6 +72,7 @@ class PresupuestoCrear extends Component {
 
    submit = (e) =>{
        e.preventDefault()
+       
        let objPresupuesto = {
           ...this.state.formulario,
           pp_tot:  (+this.state.formulario.pp_cant *
@@ -170,7 +170,9 @@ class PresupuestoCrear extends Component {
                                  <label htmlFor="pp_um">Unidad de Medida</label>                   
                                    <Select 
                                         options={this.state.unidadesmedidas} 
-                                        onChange={(e)=>{              
+                                        onChange={(e)=>{ 
+                                          console.log(e);
+                                                       
                                              this.setState({
                                                  formulario: {
                                                      ...this.state.formulario,
