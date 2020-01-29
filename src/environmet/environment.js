@@ -1,1 +1,1 @@
-export let url_backend = 'http://localhost:3000'
+export let url_backend = 'https://sgpfinal.herokuapp.com/'

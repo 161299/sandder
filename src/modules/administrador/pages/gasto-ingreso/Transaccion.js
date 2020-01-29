@@ -348,6 +348,7 @@ import Swal from 'sweetalert2'
                     </div>                
                 </div>
              </div>
+             <hr/>
              <div className="row  mt-5" >
                <div className="col-md-12" >
                   { 
