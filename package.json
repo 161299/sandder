@@ -2,7 +2,7 @@
   "name": "01-tarea-enrutamiento",
   "version": "0.1.0",
   "private": true,
-  "homepaage": "https://161299.github.io/sandder/",
+  "homepage": "https://161299.github.io/sandder/",
   "dependencies": {
     "@storybook/react": "^5.3.3",
     "@testing-library/jest-dom": "^4.2.4",
