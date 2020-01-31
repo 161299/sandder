@@ -10,6 +10,7 @@ import Loggin from './modules/loggin/Loggin';
 import Administrador from './modules/administrador/Administrador';
 import Footer from './components/Footer';
 import {AuthService} from './services/Auth'
+import Firebase from './components/Firebase';
 
 export default class App extends  Component {
 
@@ -65,6 +66,7 @@ export default class App extends  Component {
   render() {
     return (
       <Fragment>
+        <Firebase />
         <Router>
           <Switch>
             <Route path="/admin" render={()=>{
